@@ -3,8 +3,9 @@ const router = express.Router();
 
 /* GET / */
 
-router.get("/", (req, res) =>
-	res.status(200).json({ message: "Hello, World! 👋" })
-);
+router.get("/", (req, res) => {
+	const data = require("../../data/skills.json");
+	res.status(200).json({ skills: data });
+});
 
 module.exports = router;
